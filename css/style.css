@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'linlibc';
+    src: url('/css/LinLibertine_R.ttf');
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+h4{
+    padding-top: 20px;
+}
+
+.wikifont {
+    font-family: "linlibc";
+    font-size: 32px;
+}
+
+.bigger {
+    font-family: "linlibc";
+    font-size: 36px;
+}
+
+.info-line {
+    font-size: 20px;
+    height: 50px;
+    padding-bottom: 20px;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    
+    text-align: center;
+    /* background-color: white; */
+
+    width:80%;
+    height:80vh;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top: 20vh;
+}
+.splash{
+    width:22%;
+    padding-top: 30px;
+}
+.col {
+    width: 50%;
+}
+.right{
+    padding-right: 10%;
+}
+.left{
+    padding-left: 10%;
+}
+
+.info-card {
+    height: 100vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.section-head {
+    margin-left: 20px;
+}
+
+.card-head{
+    background-color: white;
+    padding-left: 40px;
+    /* margin-top: px; */
+    padding-top: 15px;
+}
+
+.card-body{
+    background-color: white;
+    padding-left: 60px;
+}
+
+.spacer {
+    height: 90px;
+}
+#displaySymbol {
+    font-size: 128px;
+    font-family: 'linlinc';
+    padding-top: 10px;
+}
+
+.bar {
+    border-top: 2px solid #1f1a17;
+    width: 180px;
+    height: 5px;
+    padding-left: 250px;
+}
+
+
+
+#clock-11 {
+    padding-left: 190px;
+}
+#clock-10 {
+    padding-left: 70px;
+}
+#clock-9 {
+    padding-right: 10px;
+}
+#clock-8 {
+    padding-left: 70px;
+}
+#clock-7 {
+    padding-left: 20px;
+}
+
+#clock-1 {
+    padding-right: 220px;
+}
+#clock-2 {
+    padding-right: 70px;
+}
+#clock-3 {
+    padding-left: 10px;
+}
+#clock-4 {
+    padding-right: 70px;
+}
+#clock-5 {
+    padding-right: 20px;
+}
