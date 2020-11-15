@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="css/style.css">
     </head>
 <body>
+    <div id="overhead">
+        <h1 class="wikifont" id="title"><span class="bigger">V</span>ISIPEDI<span class="bigger">A</span></h1>
+        <h4 id="subtitle">Visual Art through Wikipedia</h1>
+    </div>
     <div class="wrapper"> 
         <div class="col left">
             <h2 class="info-line" id="clock-11"><a href="#basic-info-card">Basic Info</a></h2>
@@ -20,12 +24,11 @@
             <h2 class="info-line" id="clock-7"><a href="#background-motivation-card"></a>Background and Motivation</h2>
         </div>
         <div class="splash"> 
-            <h1 class="wikifont" id="title"><span class="bigger">V</span>ISIPEDI<span class="bigger">A</span></h1>
             <h1 id="displaySymbol">W</h1>
         </div>
         <div class="col right">
-            <h2 class="info-line" id="clock-1">Data</h2>
-            <h2 class="info-line" id="clock-2">Data Processing</h2>
+            <h2 class="info-line" id="clock-1"><a href="#data-card">Data</a></h2>
+            <h2 class="info-line" id="clock-2"><a href="#data-processing-card">Data Processing</a></h2>
             <h2 class="info-line" id="clock-3">Must-Have Features</h2>
             <h2 class="info-line" id="clock-4">Optional Features</h2>
             <h2 class="info-line" id="clock-5">Something else here maybe</h2>
@@ -84,13 +87,92 @@
             <div class="bar" ></div>
         </div> 
         <div class="card-body">
-            <h4>Project Name — Visipedia</h4>
-            <h4>Team Name — The Bostock Boys</h4>
-            <ul>
-                <li>Camila Garcia-Novelli | camila@wustl.edu | XXXXXX</li>
-                <li>David Easton | d.easton@wustl.edu | 458110</li>
-                <li>Sarah Peiffer | speiffer@wustl.edu | XXXXXX</li>
-            </ul> 
+           
+        </div> 
+    </div>
+
+    <div class="info-card" id="data-card">
+        <div class="spacer"></div> 
+        <div class="card-head">
+            <h1 class="section-head" id="data-head"> DATA </h1>
+            <div class="bar" ></div>
+        </div> 
+        <div class="card-body">
+            <p>
+                We plan to use a variety of datasets and APIs for this project—particularly utilizing several Wikipedia APIs and datasets
+                from prominent art museums. In order to demonstrate changing popularity in artists or art works over time, we will use 
+                Wikipedia Page View statistics as an indicator of interest. The Page View API we intend to use is described here 
+                (https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews). This API will allow us to query for page views by artist,
+                museum, or genre within a set timeframe.  
+            </p>
+            <p>
+                We also would like to visualize connections between art pieces or artists or demonstrate the body of knowledge surrounding
+                a particular page of interest. To do this, we plan to use the Wikipedia Internal Links API 
+                (https://www.mediawiki.org/wiki/API:Links) which will allow us to access other linked articles on any Wikipedia page. 
+                If we determine that we need to supplement those APIs for additional information such as museum locations or general 
+                metadata we may look into webscraping wikipedia articles as well.  
+            </p>
+            <p>
+                To access information about where art works are stored and museum level data, we will use a variety of datasets from 
+                major museums with collection information. The museums we have located datasets for are linked below. There are several 
+                limitations and areas of investigation with regards to these data sources that are addressed in the data processing section. 
+                Additionally, we are aware that these museums only represent a sample of major art collections and we will be clear in the 
+                limited scope of museum information represented. We also plan to investigate the Muselia API 
+                (https://www.programmableweb.com/api/muselia-rest-api). This API provides a global directory of museums that would be 
+                useful to provide supplemental museum information in the museum view of the project. 
+            </p>
+        </div> 
+    </div>
+
+
+    <div class="info-card" id="data-processing-card">
+        <div class="spacer"></div> 
+        <div class="card-head">
+            <h1 class="section-head" id="data-processing-head"> DATA PROCESSING </h1>
+            <div class="bar" ></div>
+        </div> 
+        <div class="card-body">
+            <p>
+                Most of our data comes from APIs. Because we plan to use multiple APIs, we will need to cross reference data input sources.
+                We must also ensure each of those input sources is consistent and robust in the nature of data it supplies.
+            </p>
+            <p>
+                The quality of our data will depend on the quality of the APIs we use and our ability to successfully query those APIs. 
+                We have identified a few APIs that we will use, such as the Wikipedia page view and internal link APIs and the published 
+                APIs for major museums like the Rijksmuseum and the MoMA. The Wikipedia API requires no token and we have successfully 
+                run sample queries. The MoMA and Rijksmuseum have published extensively about their open-source APIs online, so we do 
+                not anticipate challenges in accessing that data. 
+            </p>
+            <p>
+                We have also identified a type of API that we would like to use, if the actual APIs of that type prove to be accessible
+                and robust enough. Many museums have an API that is publicly accessible, but we have not yet investigated all of those
+                APIs to ensure they accurately provide information that we would find meaningful. Some museums might have APIs, but we 
+                don’t know if we can access them—It may be that an institution only grants access tokens of an appropriate type to museum 
+                members or specific academic partners. Furthermore, many museums don’t have APIs at all. In fact, it seems that it is mostly
+                American, British, and Dutch museums that do have APIs. This would be a severe limiting factor on the data we can source. 
+                There are third-party museum collection APIs like Muselia, but we are not yet sure how good those services actually are. 
+                When working with outside data, one must contend with factors outside of his control. Our plans in this area require a 
+                degree of flexibility.
+            </p>
+            <p>
+                Once data is pulled in from APIs, we will need to use a combination of dictionaries and cross referencing functions to
+                combine multiple sources of input. Wikipedia data related to page view and internal links shouldn’t be too difficult to
+                cross reference and compile, given that such data come from a common source and should share schema similarities. Things
+                may get more complicated when we deal with works of art from multiple sources, especially when the works of art in
+                question might have titles or meta-data with multiple accepted translations into English. We may need to get creative when 
+                checking for duplicate art works, or build in some way to tolerate that fault. Ultimately, we need a mix of categorical, 
+                geographical, and quantitative data. We plan to use a mix of visualizations to accommodate this diversity of data type. 
+                In general, I much prefer to do this sort of work in Python; we might be able to run some auxiliary Python scripts depending
+                on how we host and deploy our app.
+            </p>
+            <p>
+                If API and data conversions prove to be problematic, we can use a smaller subset of static data. With this approach, we 
+                would query many of the same APIs and manually convert the dataset be build into json format. This would enable a much 
+                higher degree of control, and given that many of our data points (page views in a given year, permanent collection location, 
+                artist hometown, etc.) are static entities, it wouldn’t take too much out of our project. It would likely require narrowing 
+                our focus from a wide dataset of many artists and art pieces to a more narrow dataset of one group of artists or a few specific 
+                movements. Such a narrowing could even offer benefits in the form of a more streamlined and reliable final project. 
+            </p>
         </div> 
     </div>
 
