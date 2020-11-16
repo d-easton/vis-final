@@ -96,18 +96,17 @@
         <div class="card-body">
             <p>
                 We intend our project to be an interactive tool that appeals to both art experts and laymen alike. We want to play into design concepts
-                such as space, connection, and color when bringing our visualation of art works and genres to life. Often, we think of artists as  
-                sparks of isolated genius whose creative outpouring is neatly summed and encapsulated by a famous name. We think the truth is far messier 
-                than that. Artists have always borrowed from their mentors, their predecessors, and their muses. We want our users to 
-                see those networks of influence and inspiration as the cultural forces that drive artistic movements. To do this, we plan to use a 
-                node-and-edge style visualization. The geographic element is also key; we think a visualization of how art movements evolved in different 
-                cities and are now spread across global collections would be an interesting and novel product.
+                such as space, connection, and color when bringing our visualization of art works and genres to life. Often, we think of artists as  
+				sparks of genius whose creative outpouring is neatly summed and encapsulated by a famous name and a few famous works. We think the truth is 
+				far messier than that. We want our users to clearly see artists and movements as a whole. The geographic element is also key; we think a 
+				visualization of how art pieces moved throughout different cities and are now spread across global collections would be an interesting and 
+				novel product.
             </p>
             <p>
-                Page views are another important pillar of our project. We want to use page views as a loose analague against which we can measure
-                the influence and popularity of genres, artworks, or artists within the larger realm of "visual art." If the Impressionism bubble is 
-                bigger than the Expressionism bubble, one can infer Expressionism is generally more popular than Impressionism. We hope this aggregate 
-                information, though by no means a perfect measures, helps users put a tangible yardstick to the intangible task of measuring art influence.
+                Page views are another important pillar of our project. We want to use page views as a loose analogue against which we can measure
+                the influence and popularity of genres, artworks, or artists within the larger realm of "visual art." If the Monet bubble is 
+                bigger than the Degas bubble, one can infer Monet is generally more popular than Degas. We hope this aggregate 
+                information—though by no means a perfect measure—helps users put a tangible yardstick to the intangible task of measuring art influence.
             </p>
         </div> 
     </div>
@@ -123,8 +122,8 @@
                 We plan to use a variety of datasets and APIs for this project—particularly, we will utilize several Wikipedia APIs and datasets
                 from prominent art museums. In order to demonstrate changing popularity in artists or art works over time, we will use 
                 Wikipedia Page View statistics as an indicator of interest. Aggregated page views provide an interesting "mile-high" 
-                overview of how users interact with art information on Wikipedia. The Page View API we intend to use is described 
-                <a href="https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews">here</a>. This API will allow us to query for page views by artist,
+                overview of how users interact with art information on Wikipedia. We intend to use the
+                <a href="https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews">Page View API</a>, which  will allow us to query for page views by artist,
                 museum, or genre within a set timeframe. Though rich in data depth, this single source may be limited in usage. Additional data sources
                 are needed to build our unique project goal.
             </p>
@@ -136,14 +135,14 @@
                 metadata, we may look into webscraping Wikipedia articles as well.  
             </p>
             <p>
-                To access museum level data, we turn to a variety of datasets from major museums with collection information. Information about current
+                To access museum-level data, we turn to a variety of datasets from major museums with collection information. Information about current
                 collections may also be useful in confirming information about where art works are stored. The museums for which we have located datasets 
                 are linked below. There are several limitations and areas of investigation with regards to these data sources that are addressed in our
                 <a href="#data-processing-note"> data processing section. </a>
                 Additionally, we are aware that these museums only represent a sample of major art collections and we will be clear in the 
-                limited scope of museum information represented. We also plan to investigate the Muselia API 
+                limited scope of museum information represented. We also plan to investigate the 
                 <a href="https://www.programmableweb.com/api/muselia-rest-api">Muselia API</a>. This API provides a global directory of museums that would be 
-                useful to provide supplemental museum information in the museum view of the project. 
+                useful to provide supplemental museum information. 
             </p>
             <p>
                 Museum Dataset Links: <br>
@@ -181,12 +180,11 @@
                 <span id="data-processing-note">We have also identified a type of API</span> that we would like to use, if the actual APIs of that type prove to be accessible
                 and robust enough. Many museums have an API that is publicly accessible, but we have not yet investigated all of those
                 APIs to ensure they accurately provide information that we would find meaningful. Some museums might have APIs, but we 
-                don’t know if we can access them—It may be that an institution only grants access tokens of an appropriate type to museum 
+                don’t know if we can access them—it may be that an institution only grants access tokens of an appropriate type to museum 
                 members or specific academic partners. Furthermore, many museums don’t have APIs at all. In fact, it seems that it is mostly
                 American, British, and Dutch museums that do have APIs. This would be a severe limiting factor on the data we can source. 
                 There are third-party museum collection APIs like Muselia, but we are not yet sure how good those services actually are. 
-                When working with outside data, one must contend with factors outside of his control. Our plans in this area require a 
-                degree of flexibility.
+                Given these potential roadblocks, our plans in this area require some flexibility.
             </p>
             <p>
                 Once data is pulled in from APIs, we will need to use a combination of dictionaries and cross referencing functions to
@@ -194,14 +192,14 @@
                 cross reference and compile, given that such data come from a common source and should share schema similarities. Things
                 may get more complicated when we deal with works of art from multiple sources, especially when the works of art in
                 question might have titles or meta-data with multiple accepted translations into English. We may need to get creative when 
-                checking for duplicate art works, or build in some way to tolerate that fault. Ultimately, we need a mix of categorical, 
+                checking for duplicate art works or build in some way to tolerate that fault. Ultimately, we need a mix of categorical, 
                 geographical, and quantitative data. We plan to use a mix of visualizations to accommodate this diversity of data type. 
                 In general, I much prefer to do this sort of work in Python; we might be able to run some auxiliary Python scripts depending
                 on how we host and deploy our app.
             </p>
             <p>
                 If API and data conversions prove to be problematic, we can use a smaller subset of static data. With this approach, we 
-                would query many of the same APIs and manually convert the dataset be build into json format. This would enable a much 
+                would query many of the same APIs and manually convert the dataset into json format. This would enable a much 
                 higher degree of control, and given that many of our data points (page views in a given year, permanent collection location, 
                 artist hometown, etc.) are static entities, it wouldn’t take too much out of our project. It would likely require narrowing 
                 our focus from a wide dataset of many artists and art pieces to a more narrow dataset of one group of artists or a few specific 
@@ -282,7 +280,7 @@
                 video which often exists in a primarily digital state. Concrete artifacts suit our purpose because they reside in a physical collection,
                 and that collection can be plotted as a point on a map. If our painting-visualization method generalizes well, we plan to extend it
                 to sculpture, ceramics, or other forms of concrete visual art. We don't know enough about what our process will look like yet to 
-                guarantee that funcitonality. 
+                guarantee that functionality. 
             </p>
         </div> 
     </div>
