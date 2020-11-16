@@ -31,7 +31,7 @@
             <h2 class="info-line" id="clock-2"><a href="#data-processing-card">Data Processing</a></h2>
             <h2 class="info-line" id="clock-3"><a href="#must-have-card">Must-Have Features</a></h2>
             <h2 class="info-line" id="clock-4"><a href="#optional-card">Optional Features</a></h2>
-            <h2 class="info-line" id="clock-5">Something else here maybe</h2>
+            <h2 class="info-line" id="clock-5"><a href="#inspiration-card">Inspiration Sources</a></h2>
         </div>
     </div>
     <div class="info-card" id="basic-info-card"> 
@@ -59,24 +59,31 @@
         </div> 
         <div class="card-body">
             <p>
-                We wanted our visualization to target something familiar to a wide group of people. We, as a group, 
+                We wanted our visualization to focus on something familiar and accessible to a wide group of people. We, as a group, 
                 find the most powerful and interesting visualizations to be those that offer a new, visual
-                perspective into a familiar topic. 
+                perspective into a familiar topic. The first part of our topic selection was an exercise in brainstorming and revision.
             </p>
             <p>
-                With this general goal in mind, we started looking for interesting data sets. At first, we bounced around.
-                Candidate topics including art museum collections, influential hip hop songs, and immigration manifestos from Medieval Europe. 
+                We started looking for interesting data sets. At first, we bounced around. Candidate topics including aggregate spending 
+                on space exploration missions, influential hip hop songs, and immigration manifestos from Medieval Europe. 
                 All contenders had a similar issue—the data was out of reach. Some datasets were incomplete, others were inaccessible, and
-                some were just not what they claimed to be. Almost by accident, our brainstorming process led us to Wikipedia.
-                The Free Online Encyclopedia was the perfect topic; the site is universally familiar to our projected audience, well-documented 
-                with data, and literaly encyclopdic in scope. The next task was narrowing a broad field of opportunity into a specific angle
-                for our project.
+                some were just not what they claimed to be. Many of the datasets that were accessible were rather narrow; the specificity or 
+                topic of the dataset provided few ways of tearing that data apart in search of insight, and these few ways usually had two issues:
+                either they had been done before (by someone with way more skill than us) or they were not compelling to our group.
             </p>
             <p>
-                Page views provide an interesting "mile-high" view of how users in general interact with Wikipedia. At the aggregate
-                level, we saw the opportunity to categorize. We wanted to enable users to find trend insight visual groupings of the article types that tend to be popular on the site (notable people, films, countries, events, etc).
-                There are also time-based trends, with current events sometimes driving traffic in a given year or week. One can also observe
-                temporal variation in page or topic popularity over Wikipedia's 13 year history. 
+                We re-evaluated our approach. Rather than looking for interesting topics, we looked for interesting data. Almost by accident, 
+                we found Wikipedia. The Free Online Encyclopedia was an ideal starting point for data; the site is universally familiar to our 
+                projected audience, well-documented with data, and literally encyclopaedic in scope. Wikipedia provides free, no-auth APIs for
+                a number of different data streams (e.g. edit history, page views, internal links, etc.). With an initial data source determined,
+                we returned to our initial challenge—narrowing a broad field of opportunity into a specific angle for our project.
+            </p>
+            <p>
+                We ultimately selected visual art. Specifically, we're looking at paintings (see our <a href="#scope-note">Optional Features section </a> 
+                for a note on that). We all find this topic interesting and imagine the average user is familiar with it, even if they aren't a 
+                big art fan. Notable paintings are well-documented on Wikipedia and can be grouped by genre, by artist,
+                or by current collection occupancy. Visual art is built around a significant and inherent visual element. We figured that the 
+                average user would get value from an interactive tool with a visual nature that mirrors the visual nature of the subject medium.
             </p>
         </div> 
     </div>
@@ -87,7 +94,21 @@
             <div class="bar" ></div>
         </div> 
         <div class="card-body">
-           
+            <p>
+                We intend our project to be an interactive tool that appeals to both art experts and laymen alike. We want to play into design concepts
+                such as space, connection, and color when bringing our visualation of art works and genres to life. Often, we think of artists as  
+                sparks of isolated genius whose creative outpouring is neatly summed and encapsulated by a famous name. We think the truth is far messier 
+                than that. Artists have always borrowed from their mentors, their predecessors, and their muses. We want our users to 
+                see those networks of influence and inspiration as the cultural forces that drive artistic movements. To do this, we plan to use a 
+                node-and-edge style visualization. The geographic element is also key; we think a visualization of how art movements evolved in different 
+                cities and are now spread across global collections would be an interesting and novel product.
+            </p>
+            <p>
+                Page views are another important pillar of our project. We want to use page views as a loose analague against which we can measure
+                the influence and popularity of genres, artworks, or artists within the larger realm of "visual art." If the Impressionism bubble is 
+                bigger than the Expressionism bubble, one can infer Expressionism is generally more popular than Impressionism. We hope this aggregate 
+                information, though by no means a perfect measures, helps users put a tangible yardstick to the intangible task of measuring art influence.
+            </p>
         </div> 
     </div>
 
@@ -99,23 +120,26 @@
         </div> 
         <div class="card-body">
             <p>
-                We plan to use a variety of datasets and APIs for this project—particularly utilizing several Wikipedia APIs and datasets
+                We plan to use a variety of datasets and APIs for this project—particularly, we will utilize several Wikipedia APIs and datasets
                 from prominent art museums. In order to demonstrate changing popularity in artists or art works over time, we will use 
-                Wikipedia Page View statistics as an indicator of interest. The Page View API we intend to use is described 
+                Wikipedia Page View statistics as an indicator of interest. Aggregated page views provide an interesting "mile-high" 
+                overview of how users interact with art information on Wikipedia. The Page View API we intend to use is described 
                 <a href="https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews">here</a>. This API will allow us to query for page views by artist,
-                museum, or genre within a set timeframe.  
+                museum, or genre within a set timeframe. Though rich in data depth, this single source may be limited in usage. Additional data sources
+                are needed to build our unique project goal.
             </p>
             <p>
-                We also would like to visualize connections between art pieces or artists or demonstrate the body of knowledge surrounding
+                We also would like to visualize connections between art pieces or artists to better demonstrate the body of knowledge surrounding
                 a particular page of interest. To do this, we plan to use the Wikipedia Internal Links API linked
                 <a href="https://www.mediawiki.org/wiki/API:Links">here</a> which will allow us to access other linked articles on any Wikipedia page. 
-                If we determine that we need to supplement those APIs for additional information such as museum locations or general 
-                metadata we may look into webscraping wikipedia articles as well.  
+                If we determine that we need to supplement those APIs for additional information, such as museum locations or general 
+                metadata, we may look into webscraping Wikipedia articles as well.  
             </p>
             <p>
-                To access information about where art works are stored and museum level data, we will use a variety of datasets from 
-                major museums with collection information. The museums we have located datasets for are linked below. There are several 
-                limitations and areas of investigation with regards to these data sources that are addressed in the data processing section. 
+                To access museum level data, we turn to a variety of datasets from major museums with collection information. Information about current
+                collections may also be useful in confirming information about where art works are stored. The museums for which we have located datasets 
+                are linked below. There are several limitations and areas of investigation with regards to these data sources that are addressed in our
+                <a href="#note-data-processing"> data processing section. </a>
                 Additionally, we are aware that these museums only represent a sample of major art collections and we will be clear in the 
                 limited scope of museum information represented. We also plan to investigate the Muselia API 
                 <a href="https://www.programmableweb.com/api/muselia-rest-api">Muselia API</a>. This API provides a global directory of museums that would be 
@@ -154,7 +178,7 @@
                 not anticipate challenges in accessing that data. 
             </p>
             <p>
-                We have also identified a type of API that we would like to use, if the actual APIs of that type prove to be accessible
+                <a href="data-processing-note">We have also identified a type of API</a> that we would like to use, if the actual APIs of that type prove to be accessible
                 and robust enough. Many museums have an API that is publicly accessible, but we have not yet investigated all of those
                 APIs to ensure they accurately provide information that we would find meaningful. Some museums might have APIs, but we 
                 don’t know if we can access them—It may be that an institution only grants access tokens of an appropriate type to museum 
@@ -252,6 +276,14 @@
                 However, we do think it would be interesting to use that API to check for internal links between artists 
                 (checking if one artist links to another, etc) or to display relevant links from the page for an artist or movement.  
             </p>
+            <p>
+                <span id="scope-note">Our current topic focus is "visual art."</span> We will start with paintings, as they are often the most well-documented and 
+                genre-segmented works of visual art. Painting has the additional benefit of being a concrete artifact, unlike photography or 
+                video which often exists in a primarily digital state. Concrete artifacts suit our purpose because they reside in a physical collection,
+                and that collection can be plotted as a point on a map. If our painting-visualization method generalizes well, we plan to extend it
+                to sculpture, ceramics, or other forms of concrete visual art. We don't know enough about what our process will look like yet to 
+                guarantee that funcitonality. 
+            </p>
         </div> 
     </div>
 
@@ -280,15 +312,29 @@
         </div> 
     </div>
 
-
-<!-- 
-    <h4>project name idk</h4>
-    <h5>Group 8 - The Bostock Boys</h5>
-    <ul>
-        <li>Camila Garcia-Novelli  |  camila@wustl.edu</li>
-        <li>David Easton           |  d.easton@wustl.edu</li>
-        <li>Sarah Peiffer          |  speiffer@wustl.edu</li>
-    </ul>  -->
+    <div class="info-card" id="inspiration-card">
+        <div class="spacer"></div> 
+        <div class="card-head">
+            <h1 class="section-head" id="inspiration-head"> Inspiration Sources </h1>
+            <div class="bar" ></div>
+        </div> 
+        <div class="card-body">
+            <p>
+               At this point in the process, we have not identified any specific visualizations or designs from which we draw inspiration.
+               General ideas were sourced from example process books and visualizations found online at sites such as 
+               <a href="https://bl.ocks.org/"> bl.ocks.org. </a>
+               While satisfied with our current drafts, we will document any sources of inspiration that we use to refine our ideas. 
+            </p>
+            <p>
+                Inspiration for our topic came from 
+                <a href ="https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0"> 
+                this spreadsheet </a> of datasets, compiled from the archive of Jeremy Singer-Vine's newsletter "Data is Plural."
+                The specific collection of selected datasets, and the direction in which we plan to take them, is entirely original.
+            </p>
+        </div> 
+    </div>
+    
+    <div class="spacer"></div>
 
 
     <!-- jQuery scripts -->
